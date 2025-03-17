@@ -1,0 +1,38 @@
+# multi-model
+learning_rate: 0.001
+train_batch_size: 512
+embedding_size: 64
+feat_embed_dim: 64
+
+# n_layers: [1, 2]
+n_layers: 1
+dropout: 0.3
+# reg_weight: [0.1, 0.01]
+reg_weight: 0.1
+cl_weight: 2.0
+
+use_neg_sampling: False
+
+
+# diffusion
+timesteps: [32, 40]
+# timesteps: 20
+beta_start: 0.0001
+beta_end: 0.02
+# beta_sche: ["linear", "exp", "cosine", "sqrt"]
+beta_sche: "linear"
+diff_weight: 0.5
+# w: [0.5, 0.1, 0.3, 0.8]
+w: [0.4, 0.6, 0.3, 1]
+#Unet
+ch: 8
+out_ch: 3
+num_res_blocks: 2
+# unet_dropout: [0.3, 0.5]
+unet_dropout: 0.1
+in_channels: 3
+hidden_size: 64
+resamp_with_conv: True
+
+
+hyper_parameters: ["timesteps", "w"]

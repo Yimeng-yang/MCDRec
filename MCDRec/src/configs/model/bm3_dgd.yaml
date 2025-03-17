@@ -1,0 +1,49 @@
+# multi-model
+train_batch_size: 2048
+embedding_size: 64
+feat_embed_dim: 64
+# train_batch_size: 1024
+eval_batch_size: 1024
+
+# n_layers: [1, 2]
+n_layers: 1
+dropout: 0.3
+# reg_weight: [0.1, 0.01]
+reg_weight: 0.1
+cl_weight: 2.0
+knn_k: 10
+use_neg_sampling: True
+lambda_coeff: 0.9
+
+# diffusion
+# timesteps: [10, 50, 100, 500, 1000]
+timesteps: 20
+beta_start: 0.0001
+beta_end: 0.02
+# beta_sche: ["linear", "exp", "cosine", "sqrt"]
+beta_sche: "linear"
+diff_weight: 0.5
+# w: [0.0, 0.1, 0.3]
+# w: [0.3, 1]
+# w: [0.5, 0.1]
+# w: 0.05
+#Unet
+ch: 8
+out_ch: 3
+num_res_blocks: 2
+# unet_dropout: [0.3, 0.5]
+unet_dropout: 0.1
+in_channels: 3
+hidden_size: 64
+resamp_with_conv: True
+
+# dropout_adj: 0.0
+# dropout_adj: 0.2
+dropout_adj: 0.1
+# dropout_adj: 0.9
+# temperature: [0.05, 0.1, 0.3, 0.5, 0.8]
+temperature: [0.05, 0.1, 0.2, 0.3, 0.5]
+# temperature: {0.3
+# mf_weight: [0.5, 1, 2]
+
+hyper_parameters: ["temperature" ]
